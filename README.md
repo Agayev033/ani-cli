@@ -31,13 +31,13 @@ Animelere göz atmak ve izlemek için bir cli (yalnız VE arkadaşlarla). Bu ara
 
 ## İçindekiler
 
-- [Hataları düzeltme]( #Fixing-errors)
+- [Hataları düzeltme]( #Hataları-düzeltme)
 - [Kur](#Kurulum)
   - [Linux](#Linux)
    - [Debian](#Debian-unstable)
    - [Fedora](#Fedora)
    - [Arch](#Arch)
-   - [OpenSuse Tumbleweed ve Leap](#OpenSuse-Tumbleweed-and-Leap)
+   - [OpenSuse Tumbleweed ve Leap](#OpenSuse-Tumbleweed-ve-Leap)
    - [Kaynaktan](#Installing-from-source)
   - [MacOS](#MacOS)
   - [Windows](#Windows)
