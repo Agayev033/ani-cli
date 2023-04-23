@@ -38,35 +38,35 @@ Animelere göz atmak ve izlemek için bir cli (yalnız VE arkadaşlarla). Bu ara
    - [Fedora](#Fedora)
    - [Arch](#Arch)
    - [OpenSuse Tumbleweed ve Leap](#OpenSuse-Tumbleweed-ve-Leap)
-   - [Kaynaktan](#Installing-from-source)
+   - [Kaynaktan](#Kaynaktan-kurulum)
   - [MacOS](#MacOS)
   - [Windows](#Windows)
   - [Android](#Android)
   - [Steam Deck](#Steam-deck)
-- [Kaldırma]( #Uninstall)
-- [Bağımlılıklar](#Dependencies)
-- [Kankalar](#Homies)
+- [Kaldırma]( #Kaldırma)
+- [Bağımlılıklar](#Bağımlılıklar)
+- [Kankalar](#Kankalar)
 - [Katkı Yönergeleri](./CONTRIBUTING.md)
 - [Yasal Uyarı](./disclaimer.md)
 
 ## Hataları düzeltme
 
-If you encounter "Video url not found" or any breaking issue, then make sure you are on latest version by typing
-`sudo ani-cli -U` to update on Linux, Mac and Android. On Windows, run gitbash as administrator then there type `ani-cli -U`.
-If after this the issue persists then open an issue.
+"Video url bulunamadı" veya herhangi bir kırılma sorunuyla karşılaşırsanız, en son sürümde olduğunuzdan emin olun.
+Linux, Mac ve Android'de güncellemek için `sudo ani-cli -U` komutunu kullanın. Windows'ta gitbash'i yönetici olarak çalıştırın ve ardından `ani-cli -U` yazın.
+Bundan sonra sorun devam ederse bir "issue" açın. (Lütfen burada değil, pystardust'ın hesabında issue açın. Ben sadece çevirisini yapıyorum.)
 
-History has been reworked and relocated. We're working on a transition script, please be patient. Old history can be viewed with `less ${XDG_CACHE_HOME:-$HOME/.cache}/ani-hsts`
+Geçmiş yeniden işlendi ve yeniden konumlandırıldı. Bir geçiş betiği üzerinde çalışıyoruz, lütfen sabırlı olun. Eski geçmiş `less ${XDG_CACHE_HOME:-$HOME/.cache}/ani-hsts` komutu ile görüntülenebilir
 
-## Install
+## Kurulum
 
-#### Users of V3.2 or the v3.2.x series should uninstall before upgrading
-Otherwise you're likely to see an error like the following: ` "/usr/bin/ani-cli: line 470: (...)/player_mpv: No such file or directory"`
+#### V3.2 veya v3.2.x serisi kullanıcıları yükseltme yapmadan önce scripti kaldırmalıdır
+Aksi takdirde aşağıdaki gibi bir hata görmeniz muhtemeldir: ` "/usr/bin/ani-cli: satır 470: (...)/player_mpv: Böyle bir dosya veya dizin yok"`
 
-### Native packages
+### Yerel paketler
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/ani-cli.svg?minversion=4.0)](https://repology.org/project/ani-cli/versions)
 
-*Native packages have a more robust update cycle, but sometimes they are slow to upgrade. If the one for your platform is up-to-date we suggest going with it.*
+*Yerel paketler daha sağlam bir güncelleme döngüsüne sahiptir, ancak bazen yükseltmeleri yavaş olabilir. Platformunuz için olan güncelse, onunla devam etmenizi öneririz.*
 
 ### Linux
 
@@ -78,55 +78,55 @@ sudo apt install ani-cli
 
 #### Fedora
 
-To install mpv (and vlc) you need _RPM Fusion free_ enabled. Simply follow the instructions here: https://rpmfusion.org/Configuration
-To be able to install syncplay, you'll need to enable this copr repo (instructions included): https://copr.fedorainfracloud.org/coprs/batmanfeynman/syncplay/.
+mpv (ve vlc) yüklemek için _RPM Fusion free_ etkinleştirilmiş olmalıdır. Basitçe buradaki talimatları izleyin: https://rpmfusion.org/Configuration
+Syncplay'i yükleyebilmek için bu copr reposunu etkinleştirmeniz gerekir (talimatlar dahildir): https://copr.fedorainfracloud.org/coprs/batmanfeynman/syncplay/.
 
-To install ani-cli:
+ani-cli'yi yüklemek için:
 ```sh
 sudo dnf copr enable derisis13/ani-cli
 sudo dnf install ani-cli
 ```
-*If for your distro uses rpm and you would like to see a native package, open an issue.*
+*Dağıtımınız için rpm kullanıyorsanız ve yerel bir paket görmek istiyorsanız, bir "issue" açın.*
 
 #### Arch
 
-Build and install from the AUR: 
+AUR'den oluşturun ve kurun: 
 ```sh
 yay -S ani-cli
 ```
-Also consider `ani-cli-git`
+Ayrıca şunu da göz önünde bulundurun `ani-cli-git`
 
 #### Gentoo
 
-Build and install from the GURU:
+GURU'dan oluşturun ve kurun:
 ```sh
 sudo eselect repository enable guru
 sudo emaint sync -r guru
 sudo emerge -a ani-cli
 ```
-Consider using the 9999 ebuild.
+9999 ebuild kullanmayı göz önünde bulundurun.
 ```sh
 sudo emerge -a =app-misc/ani-cli-9999
 ```
 
-#### OpenSuse Tumbleweed and Leap
+#### OpenSuse Tumbleweed ve Leap
 
-On Suse the provided MPV and VLC packages are missing features that are used by ani-cli. The only required is the "Only Essentials" repository which has versions for each Suse release.
-You can find instructions on this [here](https://en.opensuse.org/Additional_package_repositories#Packman).
+Suse'de sağlanan MPV ve VLC paketlerinde ani-cli tarafından kullanılan özellikler eksiktir. Gerekli olan tek şey, her Suse sürümü için sürümleri olan "Only Essentials" deposudur.
+Bununla ilgili talimatları [burada](https://en.opensuse.org/Additional_package_repositories#Packman) bulabilirsiniz.
 
-To add the ani-cli copr repo, update then install ani-cli run (on both versions):
+ani-cli copr reposunu eklemek için, güncelleyin ve ardından ani-cli run'ı yükleyin (her iki sürümde de böyledir):
 ```sh
 zypper addrepo https://download.copr.fedorainfracloud.org/results/derisis13/ani-cli/opensuse-tumbleweed-x86_64/ ani-cli
 zypper dup
 zypper install ani-cli
 ```
-You'll get a warning about `Signature verification failed [4-Signatures public key is not available]` but this can be ignored from the prompt.
+İmza doğrulama başarısız oldu [4-İmzalar ortak anahtarı mevcut değil]` uyarısı alacaksınız, ancak bu durum komut isteminden göz ardı edilebilir.
 
-*Note: package is noarch, so any architecture should work, even though the repo is labelled x86-64*
+*Not: paket noarch'tır, bu nedenle depo x86-64 olarak etiketlenmiş olsa bile herhangi bir mimaride çalışmalıdır*
 
-#### Installing from source
+#### Kaynaktan kurulum
 
-Install dependencies [(See below)](#Dependencies)
+Bağımlılıkları kurun [(Aşağıya bakın)](#Bağımlılıklar)
 
 ```sh
 sudo rm -rf "/usr/local/share/ani-cli" "/usr/local/bin/ani-cli" "/usr/local/bin/UI" /usr/local/bin/player_* #If some of these aren't found, it's not a problem
@@ -137,34 +137,34 @@ rm -rf ani-cli
 
 ### MacOS
 
-Install dependencies [(See below)](#Dependencies)
+Bağımlılıkları kurun [(Aşağıya bakın)](#Bağımlılıklar)
 
-Install [HomeBrew](https://docs.brew.sh/Installation) if not installed.
+Kurulu değilse [HomeBrew] (https://docs.brew.sh/Installation) kurun.
 
 ```sh
-rm -rf "$(brew --prefix)/share/ani-cli" "$(brew --prefix)/bin/ani-cli" "$(brew --prefix)/bin/UI" "$(brew --prefix)"/bin/player_* #If some of these aren't found, it's not a problem
+rm -rf "$(brew --prefix)/share/ani-cli" "$(brew --prefix)/bin/ani-cli" "$(brew --prefix)/bin/UI" "$(brew --prefix)"/bin/player_* #Bunlardan bazıları bulunmazsa sorun olmaz
 git clone "https://github.com/pystardust/ani-cli.git" && cd ./ani-cli
 cp ./ani-cli "$(brew --prefix)"/bin 
 cd .. && rm -rf ./ani-cli
 ```
 
-*To install (with Homebrew) the dependencies required on Mac OS, you can run:* 
+*Mac OS'de gerekli olan bağımlılıkları (Homebrew ile) yüklemek için çalıştırabilirsiniz:* 
 
 ```sh
 brew install curl grep aria2 ffmpeg git fzf && \
 brew install --cask iina
 ``` 
-*Why iina and not mpv? Drop-in replacement for mpv for MacOS. Integrates well with OSX UI. Excellent support for M1. Open Source.*  
+*Neden mpv değil de iina? MacOS için mpv'nin yerine geçer. OSX kullanıcı arayüzü ile iyi entegre olur. M1 için mükemmel desteği var ve ayrıca Açık Kaynak.*  
 
 ### Windows
 
-*ani-cli needs a posix shell and the current way is git bash. Unfortunately fzf can't run in git bash's default terminal. The solution is to use git bash in windows terminal*
+*ani-cli bir posix kabuğuna ihtiyaç duyar ve mevcut yolu git bash'tir. Ne yazık ki fzf git bash'in varsayılan terminalinde çalışamaz. Çözüm windows terminalinde git bash kullanmaktır*
 
-First, you'll need windows terminal preview. [(Install)](https://apps.microsoft.com/store/detail/windows-terminal-preview/9N8G5RFZ9XK3?hl=de-at&gl=at&rtc=1)
+İlk olarak, Windows terminal önizlemesine ihtiyacınız olacak. [(Yükle)](https://apps.microsoft.com/store/detail/windows-terminal-preview/9N8G5RFZ9XK3?hl=de-at&gl=at&rtc=1)
 
-Then make sure git bash is installed. [(Install)](https://git-scm.com/download/win) It needs to be added to windows terminal [(Instructions)](https://stackoverflow.com/questions/56839307/adding-git-bash-to-the-new-windows-terminal)
+Ardından git bash'in kurulu olduğundan emin olun. [(Yükle)](https://git-scm.com/download/win) Windows terminaline eklenmesi gerekiyor [(Talimatlar)](https://stackoverflow.com/questions/56839307/adding-git-bash-to-the-new-windows-terminal)
 
-The following steps and ani-cli need to be run from git bash in windows terminal. 
+Aşağıdaki adımların ve ani-cli'nin windows terminalinde git bash'ten çalıştırılması gerekir. 
 
 #### Scoop bucket
 
@@ -173,48 +173,48 @@ scoop bucket add extras
 scoop install ani-cli
 ```
 
-#### From source
+#### Kaynaktan
 ```sh
-rm -rf "/usr/local/share/ani-cli" "/usr/local/bin/ani-cli" "/usr/local/bin/UI" /usr/local/bin/player_* #If some of these aren't found, it's not a problem
+rm -rf "/usr/local/share/ani-cli" "/usr/local/bin/ani-cli" "/usr/local/bin/UI" /usr/local/bin/player_* #Bunlardan bazıları bulunmazsa sorun olmaz
 git clone "https://github.com/pystardust/ani-cli.git"
 cp ani-cli/ani-cli /usr/bin
 rm -rf ani-cli
 ```
 
-#### Dependencies
+#### Bağımlılıklar
 
-All dependencies can be installed with scoop (from the extras bucket), however some users experienced that installed programs aren't always added to the path. If this happens installing from winget instead usually works.
+Tüm bağımlılıklar scoop ile yüklenebilir (ekstralar bucket'inden), ancak bazı kullanıcılar yüklenen programların her zaman yola eklenmediğini deneyimlemiştir. Böyle bir durumda bunun yerine winget'ten yükleme yapmak genellikle işe yarar.
 
 ### Android
 
-Install termux [(Guide)](https://termux.com/)
+termux'u yükleyin [(Kılavuz)](https://termux.com/)
 
-#### Termux package
+#### Termux paketi
 
 ```sh
 pkg up -y
 pkg install ani-cli
 ```
 
-#### From source
+#### Kaynaktan
 
 ```sh
 pkg up -y
-rm -rf "$PREFIX/share/ani-cli" "$PREFIX/bin/ani-cli" "$PREFIX/bin/UI" "$PREFIX"/local/bin/player_* #If some of these aren't found, it's not a problem
+rm -rf "$PREFIX/share/ani-cli" "$PREFIX/bin/ani-cli" "$PREFIX/bin/UI" "$PREFIX"/local/bin/player_* #Bunlardan bazıları bulunmazsa sorun değil
 git clone "https://github.com/pystardust/ani-cli.git"
 cp ani-cli/ani-cli "$PREFIX"/bin
 rm -rf ani-cli
 ```
 
-For players you can use the apk (playstore/fdroid) versions of mpv and vlc. Note that these cannot be checked from termux so a warning is generated when checking dependencies.
+Oynatıcılar için mpv ve vlc'nin apk (playstore/fdroid) sürümlerini kullanabilirsiniz. Bunların termux'tan kontrol edilemeyeceğini unutmayın, bu nedenle bağımlılıkları kontrol ederken bir uyarı oluşturulur.
 
 ### Steam Deck
 
-#### Copypaste script:
+#### Kopyala yapıştır script:
 
-* Switch to Desktop mode (`STEAM` Button > Power > Switch to Desktop)
-* Open `Konsole` (Steam Deck Icon in bottom left corner > System > Konsole)
-* Copy the script, paste it in the CLI and press Enter("A" button on Steam Deck) 
+* Masaüstü moduna geçme (`STEAM` Düğmesi > Güç > Masaüstüne Geç)
+* `Konsole`u açın (Sol alt köşedeki Steam Deck Simgesi > Sistem > Konsole)
+* Komut dosyasını kopyalayın, CLI'ya yapıştırın ve Enter'a basın (Steam Deck üzerindeki "A" düğmesi) 
 
 ```sh
 [ ! -d ~/.local/bin ] && mkdir ~/.local/bin && echo "export $PATH=$HOME/.local/bin:$PATH" >> ".$(echo $SHELL | sed -nE "s|.*/(.*)\$|\1|p")rc" 
@@ -233,32 +233,32 @@ cp ~/.ani-cli/ani-cli ~/.local/bin/
 
 flatpak install io.mpv.Mpv
 ```
-press enter("A" button on Steam Deck) on questions
+sorularda enter tuşuna basın (Steam Deck'te "A" düğmesi)
 
-#### Installation in steps:
+#### Adım adım kurulum:
 
-##### Install mpv (Flatpak version):
+##### mpv'yi yükleyin (Flatpak sürümü):
 
 ```sh
 flatpak install io.mpv.Mpv
 ```
-press enter("A" button on Steam Deck) on questions
+sorularda enter tuşuna basın (Steam Deck'te "A" düğmesi)
 
-##### Install [fzf](https://github.com/junegunn/fzf): 
+##### [fzf] Kurun (https://github.com/junegunn/fzf): 
 
 ```sh
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
-press enter("A" button on Steam Deck) on questions
+sorularda enter tuşuna basın (Steam Deck'te "A" düğmesi)
 
-##### Make a ~/.local/bin folder if doesn't exist and add it to $PATH
+##### Eğer yoksa bir ~/.local/bin klasörü oluşturun ve $PATH'e ekleyin
 
 ```sh
 [ ! -d ~/.local/bin ] && mkdir ~/.local/bin && echo "export $PATH=$HOME/.local/bin:$PATH" >> ".$(echo $SHELL | sed -nE "s|.*/(.*)\$|\1|p")rc"  
 ```
 
-##### Install [aria2](https://github.com/aria2/aria2) (needed for download feature only):
+##### [aria2](https://github.com/aria2/aria2) yükleyin (yalnızca indirme özelliği için gereklidir):
 
 ```sh
 mkdir ~/.aria2c
@@ -268,14 +268,14 @@ cp ~/.aria2c/aria2-1.36.0-linux-gnu-64bit-build1/aria2c ~/.local/bin/
 chmod +x ~/.local/bin/aria2c
 ```
 
-##### Install ani-cli:
+##### Ani-cli kurun:
 
 ```sh
 git clone https://github.com/pystardust/ani-cli.git ~/.ani-cli
 cp ~/.ani-cli/ani-cli ~/.local/bin/
 ```
 
-##### Optional: add desktop entry:
+##### Opsiyonel: masaüstü girişi ekleyin:
 
 ```
 echo '[Desktop Entry]
@@ -285,13 +285,13 @@ Type=Application
 Exec=konsole -e ani-cli
 Name=ani-cli' > ~/.local/share/applications/ani-cli.desktop
 ```
-The .desktop entry will allow to start ani-cli in Konsole directly from "Gaming Mode"
-In Steam Desktop app:
-`Add game` > `Add a non-steam game` > tick a box for `ani-cli` > `Add selected programs`
-*Note: Konsole window size bugs out if launched from "Gaming Mode".*
-*Note: this is not working the way it should yet.*
+.desktop girişi, ani-cli'nin Konsole'da doğrudan "Oyun Modu "ndan başlatılmasına izin verecektir
+Steam Masaüstü uygulamasında:
+`Oyun ekle` > `Steam dışı bir oyun ekle` > `ani-cli` için bir kutuyu işaretle > `Seçili programları ekle`
+*Not: "Oyun Modu "ndan başlatıldığında Konsole pencere boyutu hata veriyor.*
+*Not: Bu henüz olması gerektiği gibi çalışmıyor.*
 
-## Uninstall
+## Kaldırma
 
 * apt:
 ```sh
@@ -305,13 +305,13 @@ sudo dnf remove ani-cli      # for ani-cli
 # disable the repo in dnf
 dnf copr disable derisis13/ani-cli
 ```
-You might want to uninstall RPM fusion if you don't use it otherwise
+Eğer kullanmıyorsanız RPM fusion'ı kaldırmak isteyebilirsiniz
 * zypper:
 ```sh
 zypper remove ani-cli
 zypper removerepo ani-cli
 ```
-You might want to remove `packman-essentials` if you don't need it otherwise
+Eğer ihtiyacınız yoksa `packman-essentials`ı kaldırmak isteyebilirsiniz
 * AUR:
 ```sh
 yay -R ani-cli
@@ -329,11 +329,11 @@ sudo rm "/usr/local/bin/ani-cli"
 rm "$(brew --prefix)/bin/ani-cli"
 ```
 * Windows:
-In **Git Bash** run (as administrator):
+**Git Bash** içinde çalıştırın (yönetici olarak):
 ```sh
 rm "/usr/bin/ani-cli"
 ```
-* Termux package
+* Termux paketi
 ```sh
 pkg remove ani-cli
 ```
@@ -346,7 +346,7 @@ rm "$PREFIX/bin/ani-cli"
 rm "~/.local/bin/ani-cli"
 rm -rf ~/.ani-cli
 ```
-optionally: remove dependencies:
+isteğe bağlı olarak: bağımlılıkları kaldırın:
 ```sh
 rm ~/.local/bin/aria2c
 rm -rf "~/.aria2"
@@ -354,25 +354,25 @@ rm -rf "~/.fzf"
 flatpak uninstall io.mpv.Mpv
 ```
 
-## Dependencies
+## Bağımlılıklar
 
 - grep
 - sed
 - curl
-- mpv - Video Player
-- iina - mpv replacement for MacOS
-- aria2c - Download manager
-- ffmpeg - m3u8 Downloader
-- fzf - User interface
+- mpv - Video Oynatıcı
+- iina - MacOS için mpv'nin yerine geçen oynatıcı
+- aria2c - İndirme yöneticisi
+- ffmpeg - m3u8 İndirici
+- fzf - Kullanıcı Arayüzü
 
-## Homies
+## Kankalar
 
-* [animdl](https://github.com/justfoolingaround/animdl): Ridiculously efficient, fast and light-weight (supports most sources: allanime, zoro ... (Python)
-* [jerry](https://github.com/justchokingaround/jerry): stream anime with anilist tracking and syncing, with discord presence (Shell)
-* [anipy-cli](https://github.com/sdaqo/anipy-cli): ani-cli rewritten in python (Python)
-* [saikou](https://github.com/saikou-app/saikou): Best android app for anime/manga with anilist integration (Kotlin)
-* [mangal](https://github.com/metafates/mangal): Download & read manga from any source with anilist sync (Go)
-* [lobster](https://github.com/justchokingaround/lobster): Watch movies and series from the terminal (Shell)
-* [mov-cli](https://github.com/mov-cli/mov-cli): Watch movies/shows in the cli (Python/Shell)
-* [dra-cla](https://github.com/CoolnsX/dra-cla): ani-cli equivalent for korean dramas (Shell)
-* [redqu](https://github.com/port19x/redqu):  A media centric reddit client (Clojure)
+* [animdl](https://github.com/justfoolingaround/animdl): Gülünç derecede verimli, hızlı ve hafif (çoğu kaynağı destekler: allanime, zoro ... (Python)
+* [jerry](https://github.com/justchokingaround/jerry): discord presence ile anilist izleme ve senkronizasyon ile anime akışı (Shell)
+* [anipy-cli](https://github.com/sdaqo/anipy-cli): ani-cli python ile yeniden yazdı (Python)
+* [saikou](https://github.com/saikou-app/saikou): Anilist entegrasyonu ile anime/manga için en iyi android uygulaması (Kotlin)
+* [mangal](https://github.com/metafates/mangal): Anilist senkronizasyonu ile herhangi bir kaynaktan manga indirin ve okuyun (Git)
+* [lobster](https://github.com/justchokingaround/lobster): Terminalden film ve dizi izleyin (Shell)
+* [mov-cli](https://github.com/mov-cli/mov-cli): Cli'de film/şov izleme (Python/Shell)
+* [dra-cla](https://github.com/CoolnsX/dra-cla): Kore dizileri için ani-cli eşdeğeri (Shell)
+* [redqu](https://github.com/port19x/redqu):  Medya merkezli bir reddit istemcisi (Clojure)
