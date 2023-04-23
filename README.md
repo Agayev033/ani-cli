@@ -64,7 +64,7 @@ Aksi takdirde aşağıdaki gibi bir hata görmeniz muhtemeldir: ` "/usr/bin/ani-
 
 ### Yerel paketler
 
-[![Packaging status](https://repology.org/badge/vertical-allrepos/ani-cli.svg?minversion=4.0)](https://repology.org/project/ani-cli/versions)
+[![Paketleme durumu](https://repology.org/badge/vertical-allrepos/ani-cli.svg?minversion=4.0)](https://repology.org/project/ani-cli/versions)
 
 *Yerel paketler daha sağlam bir güncelleme döngüsüne sahiptir, ancak bazen yükseltmeleri yavaş olabilir. Platformunuz için olan güncelse, onunla devam etmenizi öneririz.*
 
