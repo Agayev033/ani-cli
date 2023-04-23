@@ -20,36 +20,36 @@
 </p>
 
 <h3 align="center">
-A cli to browse and watch anime (alone AND with friends). This tool scrapes the site <a href="https://allanime.to/">allanime.</a>
+Animelere göz atmak ve izlemek için bir cli (yalnız VE arkadaşlarla). Bu araç <a href="https://allanime.to/">allanime</a> sitesini kazır. 
 </h3>
 	
 <h1 align="center">
-	Showcase
+	Vitrin
 </h1>
 
 [ani-cli-demo.webm](https://user-images.githubusercontent.com/44473782/224679247-0856e652-f187-4865-bbcf-5a8e5cf830da.webm)
 
-## Table of Contents
+## İçindekiler
 
-- [Fixing errors](#Fixing-errors)
-- [Install](#Install)
+- [Hataları düzeltme]( #Fixing-errors)
+- [Kur](#Kurulum)
   - [Linux](#Linux)
    - [Debian](#Debian-unstable)
    - [Fedora](#Fedora)
    - [Arch](#Arch)
-   - [OpenSuse Tumbleweed and Leap](#OpenSuse-Tumbleweed-and-Leap)
-   - [From source](#Installing-from-source)
+   - [OpenSuse Tumbleweed ve Leap](#OpenSuse-Tumbleweed-and-Leap)
+   - [Kaynaktan](#Installing-from-source)
   - [MacOS](#MacOS)
   - [Windows](#Windows)
   - [Android](#Android)
   - [Steam Deck](#Steam-deck)
-- [Uninstall](#Uninstall)
-- [Dependencies](#Dependencies)
-- [Homies](#Homies)
-- [Contribution Guidelines](./CONTRIBUTING.md)
-- [Disclaimer](./disclaimer.md)
+- [Kaldırma]( #Uninstall)
+- [Bağımlılıklar](#Dependencies)
+- [Kankalar](#Homies)
+- [Katkı Yönergeleri](./CONTRIBUTING.md)
+- [Yasal Uyarı](./disclaimer.md)
 
-## Fixing errors
+## Hataları düzeltme
 
 If you encounter "Video url not found" or any breaking issue, then make sure you are on latest version by typing
 `sudo ani-cli -U` to update on Linux, Mac and Android. On Windows, run gitbash as administrator then there type `ani-cli -U`.
