@@ -1,109 +1,109 @@
-.TH "ANI-CLI" "1" "January 2023" "ani-cli" "User Commands"
+.TH "ANI-CLI" "1" "Ocak 2023" "ani-cli" "Kullanıcı Komutları"
 .SH NAME
-ani-cli \- watch anime from the commandline
+ani-cli \- komut satırından anime izleyin
 .SH SYNOPSIS
 .B ani-cli
-[\fI\,OPTIONS\/\fR]
+[\fI\, SEÇENEKLER\/\fR]
 .SH DESCRIPTION
-A shell script to browse and search anime from the command-line.
+Komut satırından anime taramak ve aramak için bir shell script.
 .PD 0
 .P
 .PD
-This tool scrapes the site allanime.
+Bu araç allanime sitesini kazır.
 .PD 0
 .P
 .PD
-\f[B]ani-cli\f[R] without options defaults to iina on macOS, flatpak mpv on Steamdeck, mpv apk on android and mpv media player everywhere else.
+\f[B]ani-cli\f[R] seçenekler olmadan varsayılan olarak macOS'ta iina, Steamdeck'te flatpak mpv, android'de mpv apk ve diğer her yerde mpv medya oynatıcıyı kullanmaktadır.
 .SH OPTIONS
 .TP
-\fB\-e | --episode | -r | --range\fR \fI\,<episode>\/\fR
-Specify the episode numbers to watch. If range is specified it should be quoted or separated by a non-numeric character (eg. -).
+\fB\-e | --bölüm | -r | --aralık\fR \fI\,<bölüm>\/\fR
+İzlenecek bölüm numaralarını belirtin. Aralık belirtilirse, tırnak içine alınmalı veya sayısal olmayan bir karakterle (örn. -) ayrılmalıdır.
 .TP
-\fB\-c | --continue\fR
-Continue watching anime from history.
+\fB\-c | -continue\fR
+Kaldığınız yerden anime izlemeye devam edin.
 .TP
 \fB\-d | --download\fR
-Download episode.
+Bölümü indir.
 .TP
 \fB\-D | --delete\fR
-Delete history.
+Geçmişi sil.
 .TP
 \fB\-S | --select-nth\fR \fI\,<index>\/\fR
-Selects nth entry.
+N'inci girişi seçer.
 .TP
 \fB\-h | --help\fR
-Show summary of options.
+Seçeneklerin özetini gösterir.
 .TP
-\fB\-q | --quality\fR \fI\,<best|worst|360|480|720|1080>\/\fR
-Set the video quality. Default quality is best.
+\fB\-q | --kalite\fR \fI\,<best|worst|360|480|720|1080>\/\fR
+Video kalitesini ayarlayın. Varsayılan kalite (best) en iyisidir.
 .TP
 \fB\-s | --syncplay\fR
-Watch anime together with friends, using Syncplay (works with mpv only).
+Syncplay kullanarak arkadaşlarınızla birlikte anime izleyin (yalnızca mpv ile çalışır).
 .TP
 \fB\-U | --update\fR
-Fetch update from github.
+Github'dan güncelleme indir.
 .TP
 \fB\-v | --vlc\fR
-Use VLC as the media player.
+Medya oynatıcı olarak VLC kullanın.
 .TP
 \fB\-V | --version\fR
-Print version number and exit.
+Sürüm numarasını yazdırın ve çıkın.
 .TP
 \fB\--dub\fR
-Play the dubbed version. Without this flag, it'll always play the subbed version.
+Dublajlı versiyonu oynat. Bu bayrak olmadan, her zaman altyazılı sürümü oynatır.
 .PP
 .SH
 ENVIRONMENT VARIABLES
 .PP
-ani-cli v4 uses environment variables to control unstable/untested and niche features in addition to everything that has an option. Command-line options take precedence over env vars. Note that these are all subject to change.
+ani-cli v4, seçeneği olan her şeye ek olarak kararsız/test edilmemiş ve niş özellikleri kontrol etmek için ortam değişkenlerini kullanır. Komut satırı seçenekleri env değişkenlerine göre önceliklidir. Bunların hepsinin değişime tabi olduğunu unutmayın.
 .TP
 \fBANI_CLI_MODE\fR
-Controls the scraped media's mode, valid options are sub or dub. Default is sub.
+Kazınan medyanın modunu kontrol eder, geçerli seçenekler sub veya dub'dır. Varsayılan sub'dır.
 .TP
 \fBANI_CLI_DOWNLOAD_DIR\fR
-Controls the directory where files are downloaded. Default is the current dir.
+Dosyaların indirileceği dizini kontrol eder. Varsayılan geçerli dizindir.
 .TP
 \fBANI_CLI_QUALITY\fR
-Controls the scraped media's quality, check allanime for valid options or set to worst/best. Default is best.
+Kazınan medyanın kalitesini kontrol eder, geçerli seçenekler için allanime'yi kontrol edin veya en kötü/en iyi olarak ayarlayın. Varsayılan en iyisidir.
 .TP
 \fBANI_CLI_PLAYER\fR
-Sets the player ani-cli uses. Can be debug (print links), download (equivalent to -d), android_mpv (apk and am start), android_vlc (apk and am start), flatpak_mpv (for flatpak), catt (for streaming to tv), or any player that can play urls. For defaults see working without arguments.
+ani-cli'nin kullandığı oynatıcıyı ayarlar. Debug (bağlantıları yazdır), download (-d'ye eşdeğer), android_mpv (apk ve am start), android_vlc (apk ve am start), flatpak_mpv (flatpak için), catt (tv'ye akış için) veya URL'leri oynatabilen herhangi bir oynatıcı olabilir. Varsayılanlar için argümansız çalışma bölümüne bakınız.
 .TP
 \fBANI_CLI_EXTERNAL_MENU\fR
-Controls the frontend of ani-cli. Can be 0 (uses fzf) or 1 (uses rofi dmenu). Default is 0.
+ani-cli'nin önyüzünü kontrol eder. 0 (fzf kullanır) veya 1 (rofi dmenu kullanır) olabilir. Varsayılan değer 0'dır.
 .TP
 \fBANI_CLI_MULTI_SELECTION\fR
-Controls the multi flag for the chosen frontend. Default is -m for fzf and --multi-select for rofi dmenu.
+Seçilen ön uç için çoklu bayrağı kontrol eder. Varsayılan değer fzf için -m ve rofi dmenu için --multi-select'tir.
 .TP
 \fBANI_CLI_CACHE_DIR\fR
-Controls the directory ani-cli uses for caching results. A /ani-cli subfolder is created there for the cache files if doesn't exists. Default is $XDG_CACHE_HOME if set, $HOME/.cache/ if not.
+ani-cli'nin sonuçları önbelleğe almak için kullandığı dizini kontrol eder. Eğer yoksa önbellek dosyaları için bir /ani-cli alt klasörü oluşturulur. Varsayılan, ayarlanmışsa $XDG_CACHE_HOME, ayarlanmamışsa $HOME/.cache/'dir.
 .TP
 \fBANI_CLI_HIST_DIR\fR
-Controls the directory ani-cli uses for storing history. A /ani-cli subfolder is created there for the histfile if doesn't exists. Default is $XDG_STATE_HOME if set, $HOME/.local/state if not.
+ani-cli'nin geçmişi depolamak için kullandığı dizini kontrol eder. Eğer mevcut değilse hist dosyası için bir /ani-cli alt klasörü oluşturulur. Varsayılan, ayarlanmışsa $XDG_STATE_HOME, ayarlanmamışsa $HOME/.local/state'dir.
 .TP
 \fBANI_CLI_DEFAULT_SOURCE\fR
-Controls the default source. Valid is history (equivalent to -c), everything else means search. Default is search.
+Varsayılan kaynağı kontrol eder. Geçerli olan geçmiş (-c ile eşdeğerdir), diğer her şey arama anlamına gelir. Varsayılan kaynak aramadır.
 .PP
 .SH EPISODE SELECTION
 .PP
-Multiple episodes can be chosen using fzf (or alternative frontend's) multi-selection mode. For this refer to their instructions.
+Birden fazla bölüm fzf (veya alternatif ön uç) çoklu seçim modu kullanılarak seçilebilir. Bunun için talimatlarına bakın.
 .SH BUGS
 .PP
-Use the GitHub issue tracker:
+GitHub sorun izleyicisini kullanın:
 https://github.com/pystardust/ani-cli/issues
 .SH COPYRIGHT
 .PP
-ani-cli is licensed under the GNU General Public License v3.0
+ani-cli, GNU Genel Kamu Lisansı v3.0 altında lisanslanmıştır
 .PP
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+Bu program özgür yazılımdır: yeniden dağıtabilir ve/veya değiştirebilirsiniz
+tarafından yayınlanan GNU Genel Kamu Lisansı koşulları altında
+Özgür Yazılım Vakfı, Lisansın 3. sürümü veya
+(sizin tercihinize bağlı olarak) daha sonraki herhangi bir sürüm.
 .PP
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
+Bu program yararlı olacağı umuduyla dağıtılmaktadır,
+ancak HİÇBİR GARANTİ OLMAKSIZIN; zımni garanti bile olmaksızın
+SATILABİLİRLİK veya BELİRLİ BİR AMACA UYGUNLUK. Bkz.
+Daha fazla ayrıntı için GNU Genel Kamu Lisansı.
 .PP
-You should have received a copy of the GNU General Public License
-along with this program. If not, see <http://www.gnu.org/licenses/>.
+GNU Genel Kamu Lisansı'nın bir kopyasını almış olmalısınız
+bu programla birlikte. Değilse, <http://www.gnu.org/licenses/> adresine bakın.
