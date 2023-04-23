@@ -130,7 +130,7 @@ Bağımlılıkları kurun [(Aşağıya bakın)](#Bağımlılıklar)
 
 ```sh
 sudo rm -rf "/usr/local/share/ani-cli" "/usr/local/bin/ani-cli" "/usr/local/bin/UI" /usr/local/bin/player_* #If some of these aren't found, it's not a problem
-git clone "https://github.com/pystardust/ani-cli.git"
+git clone "https://github.com/Agayev033/ani-cli.git"
 sudo cp ani-cli/ani-cli /usr/local/bin
 rm -rf ani-cli
 ```
@@ -143,7 +143,7 @@ Kurulu değilse [HomeBrew] (https://docs.brew.sh/Installation) kurun.
 
 ```sh
 rm -rf "$(brew --prefix)/share/ani-cli" "$(brew --prefix)/bin/ani-cli" "$(brew --prefix)/bin/UI" "$(brew --prefix)"/bin/player_* #Bunlardan bazıları bulunmazsa sorun olmaz
-git clone "https://github.com/pystardust/ani-cli.git" && cd ./ani-cli
+git clone "https://github.com/Agayev033/ani-cli.git" && cd ./ani-cli
 cp ./ani-cli "$(brew --prefix)"/bin 
 cd .. && rm -rf ./ani-cli
 ```
@@ -176,7 +176,7 @@ scoop install ani-cli
 #### Kaynaktan
 ```sh
 rm -rf "/usr/local/share/ani-cli" "/usr/local/bin/ani-cli" "/usr/local/bin/UI" /usr/local/bin/player_* #Bunlardan bazıları bulunmazsa sorun olmaz
-git clone "https://github.com/pystardust/ani-cli.git"
+git clone "https://github.com/Agayev033/ani-cli.git"
 cp ani-cli/ani-cli /usr/bin
 rm -rf ani-cli
 ```
@@ -201,7 +201,7 @@ pkg install ani-cli
 ```sh
 pkg up -y
 rm -rf "$PREFIX/share/ani-cli" "$PREFIX/bin/ani-cli" "$PREFIX/bin/UI" "$PREFIX"/local/bin/player_* #Bunlardan bazıları bulunmazsa sorun değil
-git clone "https://github.com/pystardust/ani-cli.git"
+git clone "https://github.com/Agayev033/ani-cli.git"
 cp ani-cli/ani-cli "$PREFIX"/bin
 rm -rf ani-cli
 ```
@@ -228,7 +228,7 @@ tar xvf ~/.aria2c/aria2-1.36.0.tar.bz2 -C ~/.aria2c/
 cp ~/.aria2c/aria2-1.36.0-linux-gnu-64bit-build1/aria2c ~/.local/bin/
 chmod +x ~/.local/bin/aria2c
 
-git clone https://github.com/pystardust/ani-cli.git ~/.ani-cli
+git clone https://github.com/Agayev033/ani-cli.git ~/.ani-cli
 cp ~/.ani-cli/ani-cli ~/.local/bin/
 
 flatpak install io.mpv.Mpv
@@ -271,7 +271,7 @@ chmod +x ~/.local/bin/aria2c
 ##### Ani-cli kurun:
 
 ```sh
-git clone https://github.com/pystardust/ani-cli.git ~/.ani-cli
+git clone https://github.com/Agayev033/ani-cli.git ~/.ani-cli
 cp ~/.ani-cli/ani-cli ~/.local/bin/
 ```
 
